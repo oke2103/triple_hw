@@ -24,15 +24,11 @@ import java.util.UUID;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "REVIEW",
-        indexes = {@Index(name = "REVIEW_ID_INDEX", columnList = "reviewId", unique = true)
-                , @Index(name = "REVIEW_CONSTRAINTS_INDEX", columnList = "placeId, userId", unique = true)}
+        indexes = {@Index(name = "REVIEW_CONSTRAINTS_INDEX", columnList = "placeId, userId", unique = true)}
 )
 public class ReviewEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reviewKey;
-
     @Column(columnDefinition = "BINARY(16)", nullable = false)
     private UUID reviewId;
 

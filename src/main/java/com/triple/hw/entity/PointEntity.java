@@ -25,9 +25,6 @@ import java.util.UUID;
 public class PointEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pointKey;
-
     @Column(columnDefinition = "BINARY(16)")
     private UUID pointId;
 
@@ -43,12 +40,10 @@ public class PointEntity {
     private int point;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reviewKey")
+    @JoinColumn(name = "reviewId", foreignKey = @ForeignKey(name = "fk_point_to_review"))
     private ReviewEntity review;
 
     @CreatedDate
     private LocalDateTime createdDate;
 
-    @LastModifiedDate
-    private LocalDateTime lastModifiedDate;
 }

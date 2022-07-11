@@ -19,18 +19,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name = "ATTACH_FILE", uniqueConstraints = @UniqueConstraint(name = "ATTACH_FILE_UNIQUE", columnNames = {"attachFileId"}))
+@Table(name = "ATTACH_FILE")
 public class AttachFileEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long attachFileKey;
-
     @Column(columnDefinition = "BINARY(16)")
     private UUID attachFileId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reviewKey")
+    @JoinColumn(name = "reviewId", foreignKey = @ForeignKey(name = "fk_attachFile_to_review"))
     private ReviewEntity review;
 
     @CreatedDate

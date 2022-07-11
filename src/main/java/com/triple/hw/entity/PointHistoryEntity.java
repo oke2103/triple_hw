@@ -23,9 +23,6 @@ import java.util.UUID;
 public class PointHistoryEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pointKey;
-
     @Column(columnDefinition = "BINARY(16)")
     private UUID pointId;
 
