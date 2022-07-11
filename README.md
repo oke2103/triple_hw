@@ -1,9 +1,9 @@
-#트리플여행자 클럽 마일리지 서비스 구현
+# 트리플여행자 클럽 마일리지 서비스 구현
 
-##개요
+## 개요
 트리플 사용자들이 장소에 리뷰를 작성할 때 포인트를 부여하고, 전체/개인에 대한 포인트 부여 히스토리와 개인별 누적 포인트를 관리하기 위한 서비스를 구현
 
-##요구사항
+## 요구사항
 - 한 사용자는 장소마다 리뷰를 1개만 작성할 수 있고, 리뷰는 수정 또는 삭제 가능.
   - 내용 점수
     - 1자 이상 텍스트 작성: 1점
@@ -22,7 +22,7 @@
   - 어떤 장소에 사용자 A가 리뷰를 남겼다가 삭제하는데, 삭제되기 이전 사용자 B가 리뷰를 남기면 사용자 B에게 보너스 점수를 부여하지 않음.
   
 
-##실행 방법
+## 실행 방법
 ```text
 # Git Repository Clone
 git clone https://github.com/oke2103/triple_hw.git
@@ -39,7 +39,7 @@ java -jar {projectPath}/build/libs/hw-1.0.jar
 # 하단의 DDL Scripts 실행     
 ```
 
-##API 호출 양식
+## API 호출 양식
 POST / events
 
 ```json
@@ -202,7 +202,7 @@ POST / events
 ```
 
 ## 데이터 베이스 ERD
-<img width="408" alt="스크린샷 2022-07-11 오후 12 32 56" src="https://user-images.githubusercontent.com/33611355/178185669-352d62de-19e3-4240-895a-ac53c8e620b1.png">
+<img width="516" alt="스크린샷 2022-07-11 오후 8 00 52" src="https://user-images.githubusercontent.com/33611355/178250305-62de83e6-8c6c-47fd-aa3c-406d11cda1ae.png">
 
 ## DDL Scripts
 ```sql
