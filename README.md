@@ -71,7 +71,7 @@ POST / events
 ### 리뷰 생성
 - Request
   - Method: POST
-  - Uri: /events
+  - URI: /events
   - Headers
     - Content-Type: application/json
   - Body
